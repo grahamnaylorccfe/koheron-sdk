@@ -142,6 +142,8 @@ apt-get install -y nginx
 apt-get install -y build-essential python-dev
 apt-get install -y python-numpy
 apt-get install -y python-pip python-setuptools python-all-dev python-wheel
+#for snickerdoodle to allow loading of wpa_supplicant module
+apt-get install -y kmod
 
 pip install --upgrade pip
 pip install flask
@@ -156,11 +158,15 @@ sed -i 's/^PermitRootLogin.*/PermitRootLogin yes/' etc/ssh/sshd_config
 
 touch etc/udev/rules.d/75-persistent-net-generator.rules
 
+#Modifications for Snickerdoodle - changing eth0 to wlan0
 cat <<- EOF_CAT >> etc/network/interfaces
-allow-hotplug eth0
+allow-hotplug wlan0
+wpa-driver wext
+wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 
 # DHCP configuration
-iface eth0 inet dhcp
+#iface eth0 inet dhcp
+iface wlan0 inet dhcp
 
 # Static IP
 #iface eth0 inet static
