@@ -26,8 +26,14 @@ UBOOT_TAR := $(TMP)/u-boot-xlnx-$(UBOOT_TAG).tar.gz
 LINUX_TAR := $(TMP)/linux-xlnx-$(LINUX_TAG).tar.gz
 DTREE_TAR := $(TMP)/device-tree-xlnx-$(DTREE_TAG).tar.gz
 
-UBOOT_URL := https://github.com/Koheron/u-boot-xlnx/archive/$(UBOOT_TAG).tar.gz
-LINUX_URL := https://github.com/Koheron/linux-xlnx/archive/$(LINUX_TAG).tar.gz
+UBOOT_URL := https://github.com/grahamnaylorccfe/u-boot-xlnx/archive/$(UBOOT_TAG).tar.gz
+###https://github.com/krtkl/snickerdoodle-u-boot/archive/xilinx-v2016.1.tar.gz
+###### was https://github.com/Koheron/u-boot-xlnx/archive/$(UBOOT_TAG).tar.gz
+
+LINUX_URL := https://github.com/grahamnaylorccfe/linux-xlnx/archive/$(LINUX_TAG).tar.gz
+##### https://github.com/krtkl/snickerdoodle-linux/archive/xilinx-v2016.1.01.tar.gz
+####### was https://github.com/Koheron/linux-xlnx/archive/$(LINUX_TAG).tar.gz
+
 DTREE_URL := https://github.com/Xilinx/device-tree-xlnx/archive/$(DTREE_TAG).tar.gz
 
 LINUX_CFLAGS := "-O2 -march=armv7-a -mcpu=cortex-a9 -mfpu=neon -mfloat-abi=hard"
